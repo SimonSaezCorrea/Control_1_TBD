@@ -31,3 +31,23 @@ INNER JOIN Compania c ON c.id_compania=v.id_compania
 INNER JOIN Avion a ON c.id_avion=a.id_avion
 GROUP BY a.id_avion
 ORDER BY vuelos ASC LIMIT 1
+
+SELECT c.nombre,
+	EXTRACT(year FROM s.fecha_inscrito) as anio, 
+	avg(s.cantidad) as sueldo_promedio
+FROM Compania c
+INNER JOIN Empleado e ON c.id_compania = e.id_compania
+INNER JOIN Sueldo s ON e.id_sueldo = s.id_sueldo
+WHERE s.fecha_inscrito >= date_trunc('day', CURRENT_DATE - interval '10 years')
+GROUP BY c.nombre, EXTRACT(year FROM s.fecha_inscrito)
+ORDER BY sueldo_promedio DESC
+
+SELECT DISTINCT ON (c.nombre)
+c.nombre AS compania, m.nombre AS modelo, COUNT(*) AS cantidad
+FROM Compania c
+JOIN Avion a ON c.id_compania = a.id_compania
+JOIN Modelo m ON a.id_modelo = m.id_modelo
+WHERE date_part('year', a.fecha) = 2021
+GROUP BY c.nombre, m.nombre
+ORDER BY compania, cantidad DESC
+

@@ -9,18 +9,19 @@ create table Modelo(
 	nombre varchar(100) not null
 );
 
+
+create table Compania(
+	id_compania int primary key,
+	nombre varchar(100) not null
+);
+
 create table Avion(
 	id_avion int primary key,
 	fecha date not null,
 	id_modelo int not null,
-	foreign key (id_modelo) references Modelo(id_modelo)
-);
-
-create table Compania(
-	id_compania int primary key,
-	nombre varchar(100) not null,
-	id_avion int,
-	foreign key (id_avion) references Avion(id_avion)
+	id_compania int not null,
+	foreign key (id_modelo) references Modelo(id_modelo),
+	foreign key (id_compania) references Compania(id_compania)
 );
 
 create table Cliente_Compania(
