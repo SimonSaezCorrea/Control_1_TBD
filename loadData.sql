@@ -40,6 +40,27 @@ insert into Modelo (id_modelo, nombre) values (18, 'S10');
 insert into Modelo (id_modelo, nombre) values (19, 'Allroad');
 insert into Modelo (id_modelo, nombre) values (20, 'C-Class');
 
+insert into Compania (id_compania, nombre) values (1, 'Paucek-Rau');
+insert into Compania (id_compania, nombre) values (2, 'Mosciski and Sons');
+insert into Compania (id_compania, nombre) values (3, 'Schumm-Labadie');
+insert into Compania (id_compania, nombre) values (4, 'O''Conner-Cremin');
+insert into Compania (id_compania, nombre) values (5, 'Muller Inc');
+insert into Compania (id_compania, nombre) values (6, 'Reichert, Pacocha and Watsica');
+insert into Compania (id_compania, nombre) values (7, 'Stiedemann, Leffler and Gutkowski');
+insert into Compania (id_compania, nombre) values (8, 'Huel, Abshire and Cormier');
+insert into Compania (id_compania, nombre) values (9, 'Treutel-Gleichner');
+insert into Compania (id_compania, nombre) values (10, 'Legros and Sons');
+insert into Compania (id_compania, nombre) values (11, 'Stokes, McGlynn and Murphy');
+insert into Compania (id_compania, nombre) values (12, 'Kemmer-Mertz');
+insert into Compania (id_compania, nombre) values (13, 'Wunsch and Sons');
+insert into Compania (id_compania, nombre) values (14, 'Bergstrom, Terry and Zemlak');
+insert into Compania (id_compania, nombre) values (15, 'Nikolaus-Ernser');
+insert into Compania (id_compania, nombre) values (16, 'McGlynn, Kutch and Farrell');
+insert into Compania (id_compania, nombre) values (17, 'Terry, Dooley and Murphy');
+insert into Compania (id_compania, nombre) values (18, 'Leffler, Schmitt and Von');
+insert into Compania (id_compania, nombre) values (19, 'Koch, Hyatt and Frami');
+insert into Compania (id_compania, nombre) values (20, 'Greenfelder-Zieme');
+
 insert into Avion (id_avion, fecha, id_modelo, id_compania) values (1, '2021-04-29', 2, 1);
 insert into Avion (id_avion, fecha, id_modelo, id_compania) values (2, '2021-04-08', 18, 3);
 insert into Avion (id_avion, fecha, id_modelo, id_compania) values (3, '2021-01-20', 4, 2);
@@ -78,28 +99,6 @@ insert into Avion (id_avion, fecha, id_modelo, id_compania) values (35, '2005-11
 insert into Avion (id_avion, fecha, id_modelo, id_compania) values (36, '2021-11-26', 13, 20);
 insert into Avion (id_avion, fecha, id_modelo, id_compania) values (37, '2021-07-26', 13, 20);
 insert into Avion (id_avion, fecha, id_modelo, id_compania) values (38, '2021-05-26', 13, 20);
-
-
-insert into Compania (id_compania, nombre) values (1, 'Paucek-Rau');
-insert into Compania (id_compania, nombre) values (2, 'Mosciski and Sons');
-insert into Compania (id_compania, nombre) values (3, 'Schumm-Labadie');
-insert into Compania (id_compania, nombre) values (4, 'O''Conner-Cremin');
-insert into Compania (id_compania, nombre) values (5, 'Muller Inc');
-insert into Compania (id_compania, nombre) values (6, 'Reichert, Pacocha and Watsica');
-insert into Compania (id_compania, nombre) values (7, 'Stiedemann, Leffler and Gutkowski');
-insert into Compania (id_compania, nombre) values (8, 'Huel, Abshire and Cormier');
-insert into Compania (id_compania, nombre) values (9, 'Treutel-Gleichner');
-insert into Compania (id_compania, nombre) values (10, 'Legros and Sons');
-insert into Compania (id_compania, nombre) values (11, 'Stokes, McGlynn and Murphy');
-insert into Compania (id_compania, nombre) values (12, 'Kemmer-Mertz');
-insert into Compania (id_compania, nombre) values (13, 'Wunsch and Sons');
-insert into Compania (id_compania, nombre) values (14, 'Bergstrom, Terry and Zemlak');
-insert into Compania (id_compania, nombre) values (15, 'Nikolaus-Ernser');
-insert into Compania (id_compania, nombre) values (16, 'McGlynn, Kutch and Farrell');
-insert into Compania (id_compania, nombre) values (17, 'Terry, Dooley and Murphy');
-insert into Compania (id_compania, nombre) values (18, 'Leffler, Schmitt and Von');
-insert into Compania (id_compania, nombre) values (19, 'Koch, Hyatt and Frami');
-insert into Compania (id_compania, nombre) values (20, 'Greenfelder-Zieme');
 
 insert into Cliente_Compania (id_compania, id_cliente) values (16, 3);
 insert into Cliente_Compania (id_compania, id_cliente) values (4, 2);
