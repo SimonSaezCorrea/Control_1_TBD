@@ -183,6 +183,16 @@ insert into Sueldo (id_sueldo, cantidad, fecha_inscrito) values (17, 1574816, '2
 insert into Sueldo (id_sueldo, cantidad, fecha_inscrito) values (18, 1060678, '2011-10-13');
 insert into Sueldo (id_sueldo, cantidad, fecha_inscrito) values (19, 1785583, '2017-11-26');
 insert into Sueldo (id_sueldo, cantidad, fecha_inscrito) values (20, 1825912, '2020-06-01');
+insert into Sueldo (id_sueldo, cantidad, fecha_inscrito) values (21, 4825912, '2020-06-01');
+insert into Sueldo (id_sueldo, cantidad, fecha_inscrito) values (22, 1825912, '2020-06-01');
+insert into Sueldo (id_sueldo, cantidad, fecha_inscrito) values (23, 3825912, '2019-06-01');
+insert into Sueldo (id_sueldo, cantidad, fecha_inscrito) values (24, 1825912, '2019-06-01');
+insert into Sueldo (id_sueldo, cantidad, fecha_inscrito) values (25, 2825912, '2021-06-01');
+insert into Sueldo (id_sueldo, cantidad, fecha_inscrito) values (26, 7825912, '2022-06-01');
+insert into Sueldo (id_sueldo, cantidad, fecha_inscrito) values (27, 1825912, '2023-03-01');
+insert into Sueldo (id_sueldo, cantidad, fecha_inscrito) values (28, 1825912, '2019-06-01');
+insert into Sueldo (id_sueldo, cantidad, fecha_inscrito) values (29, 2825912, '2022-06-01');
+insert into Sueldo (id_sueldo, cantidad, fecha_inscrito) values (30, 3825912, '2021-06-01');
 
 insert into Empleado (id_empleado, nombre, rol, id_sueldo, id_compania) values (1, 'Bailie Petric', 'Piloto', 4, 12);
 insert into Empleado (id_empleado, nombre, rol, id_sueldo, id_compania) values (2, 'Sebastiano Masser', 'Secretario', 13, 12);
@@ -204,6 +214,16 @@ insert into Empleado (id_empleado, nombre, rol, id_sueldo, id_compania) values (
 insert into Empleado (id_empleado, nombre, rol, id_sueldo, id_compania) values (18, 'Drucy Achromov', 'Piloto', 8, 10);
 insert into Empleado (id_empleado, nombre, rol, id_sueldo, id_compania) values (19, 'Marysa Verrill', 'Conserje', 17, 13);
 insert into Empleado (id_empleado, nombre, rol, id_sueldo, id_compania) values (20, 'Giacopo Stanney', 'Guardia', 16, 3);
+insert into Empleado (id_empleado, nombre, rol, id_sueldo, id_compania) values (21, 'Yu Kamada', 'Piloto', 21, 2);
+insert into Empleado (id_empleado, nombre, rol, id_sueldo, id_compania) values (22, 'Tony Stark', 'Piloto', 22, 3);
+insert into Empleado (id_empleado, nombre, rol, id_sueldo, id_compania) values (23, 'Tom Maverick', 'Piloto', 23, 13);
+insert into Empleado (id_empleado, nombre, rol, id_sueldo, id_compania) values (24, 'Adam Pierce', 'Piloto', 24, 5);
+insert into Empleado (id_empleado, nombre, rol, id_sueldo, id_compania) values (25, 'Juan Perez', 'Piloto', 25, 10);
+insert into Empleado (id_empleado, nombre, rol, id_sueldo, id_compania) values (26, 'Son Goku', 'Piloto', 26, 6);
+insert into Empleado (id_empleado, nombre, rol, id_sueldo, id_compania) values (27, 'Miguel Rodrigez', 'Piloto', 27, 12);
+insert into Empleado (id_empleado, nombre, rol, id_sueldo, id_compania) values (28, 'Manuel Gonzalez', 'Piloto', 28, 12);
+insert into Empleado (id_empleado, nombre, rol, id_sueldo, id_compania) values (29, 'Mohamed Salah', 'Piloto', 29, 7);
+insert into Empleado (id_empleado, nombre, rol, id_sueldo, id_compania) values (30, 'Kylian Mbappe', 'Piloto', 30, 9);
 
 
 insert into Emp_Vuelo (id_empleado, id_Vuelo) values (5, 8);
