@@ -1,36 +1,40 @@
-Select Pe.lugar
-from Pasaje as Pe, Vuelo as Vo, Cliente_Vuelo as Ce_Vo, Cliente as Ce
-where 
-	Pe.id_vuelo = Vo.id_vuelo and
-	Ce_Vo.id_vuelo = Vo.id_vuelo and
-	Ce_Vo.id_cliente = Ce.id_cliente and
-	Pe.fecha>'2019-03-29' and
+SELECT Pe.lugar
+FROM Pasaje AS Pe, Vuelo AS Vo, Cliente_Vuelo AS Ce_Vo, Cliente AS Ce
+WHERE 
+	Pe.id_vuelo = Vo.id_vuelo AND
+	Ce_Vo.id_vuelo = Vo.id_vuelo AND
+	Ce_Vo.id_cliente = Ce.id_cliente AND
+	Pe.fecha>'2019-03-29' AND
 	Ce.nacionalidad = 'Chile';
 	
-Select Sn.nombre, count(*)
-from Pasaje as Pe, Vuelo as Vo, Cliente_Vuelo as Ce_Vo, Cliente as Ce, Seccion Sn
-where
-	Pe.id_vuelo = Vo.id_vuelo and
-	Ce_Vo.id_vuelo = Vo.id_vuelo and
-	Ce_Vo.id_cliente = Ce.id_cliente and
-	Sn.id_seccion = Pe.id_seccion and
+SELECT Sn.nombre, COUNT(*)
+FROM Pasaje AS Pe, Vuelo AS Vo, Cliente_Vuelo AS Ce_Vo, Cliente AS Ce, Seccion Sn
+WHERE
+	Pe.id_vuelo = Vo.id_vuelo AND
+	Ce_Vo.id_vuelo = Vo.id_vuelo AND
+	Ce_Vo.id_cliente = Ce.id_cliente AND
+	Sn.id_seccion = Pe.id_seccion AND
 	Ce.nacionalidad = 'Argentina'
-group by Sn.id_seccion;
+GROUP BY Sn.id_seccion;
 
-SELECT s.fecha_inscrito,e.id_empleado,e.rol,MAX(s.cantidad) AS vuelos
+WITH R AS (
+SELECT s.fecha_inscrito,e.id_empleado,s.cantidad,
+	ROW_NUMBER() OVER(PARTITION BY s.fecha_inscrito ORDER BY s.cantidad DESC) AS rn
 FROM Sueldo s
 INNER JOIN Empleado e ON e.id_sueldo=s.id_sueldo
-WHERE s.fecha_inscrito >= '2020-04-03' AND s.fecha_inscrito < '2023-04-03'
-	AND e.rol='Piloto'
-GROUP BY s.fecha_inscrito,e.id_empleado,e.rol,s.cantidad
-ORDER BY s.fecha_inscrito DESC;
+WHERE e.rol='Piloto' AND s.fecha_inscrito >= (CURRENT_DATE - interval '3 years') 
+	AND s.fecha_inscrito < CURRENT_DATE
+)
+SELECT fecha_inscrito, id_empleado,cantidad AS Sueldo_Mayor
+FROM R
+WHERE rn = 1;
 
 SELECT a.id_avion, COUNT(a.id_avion) AS vuelos
 FROM Vuelo v
 INNER JOIN Compania c ON c.id_compania=v.id_compania
 INNER JOIN Avion a ON c.id_compania = a.id_compania
 GROUP BY a.id_avion
-ORDER BY vuelos ASC LIMIT 1
+ORDER BY vuelos ASC LIMIT 1;
 
 SELECT DISTINCT ON (anio)
 	c.nombre as nombre,
@@ -43,7 +47,7 @@ INNER JOIN Sueldo s ON e.id_sueldo = s.id_sueldo
 WHERE s.fecha_inscrito >= date_trunc('day', CURRENT_DATE - interval '10 years')
 GROUP BY c.nombre, EXTRACT(year FROM s.fecha_inscrito)
 ORDER BY anio, sueldo_promedio DESC
-ORDER BY sueldo_promedio DESC
+ORDER BY sueldo_promedio DESC;
 
 SELECT DISTINCT ON (c.nombre)
 c.nombre AS compania, m.nombre AS modelo, COUNT(*) AS cantidad
