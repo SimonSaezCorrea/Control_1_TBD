@@ -95,7 +95,7 @@ WHERE rn = 1
 SELECT c.nombre AS compania, EXTRACT(YEAR FROM a.fecha) AS anio, COUNT(*) AS total_aviones
 FROM Compania c
 JOIN Avion a ON a.id_compania = c.id_compania
-WHERE EXTRACT(YEAR FROM a.fecha) >= EXTRACT(YEAR FROM a.fecha) - 10
+WHERE a.fecha >= (CURRENT_DATE - interval '10 years')
 GROUP BY c.nombre, EXTRACT(YEAR FROM a.fecha)
 ORDER BY EXTRACT(YEAR FROM a.fecha);
 
