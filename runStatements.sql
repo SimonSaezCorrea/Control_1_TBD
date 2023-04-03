@@ -78,6 +78,12 @@ WHERE rn = 1;
 --7.- Lista de compañías indicando cual es el avión que más ha recaudado en los últimos 4 años y cual es el monto recaudado
 
 --8.- Lista de compañías y total de aviones por año, en los últimos 10 años
+SELECT c.nombre AS compania, EXTRACT(YEAR FROM a.fecha) AS anio, COUNT(*) AS total_aviones
+FROM Compania c
+JOIN Avion a ON a.id_compania = c.id_compania
+WHERE EXTRACT(YEAR FROM a.fecha) >= EXTRACT(YEAR FROM a.fecha) - 10
+GROUP BY c.nombre, EXTRACT(YEAR FROM a.fecha)
+ORDER BY EXTRACT(YEAR FROM a.fecha);
 
 -- 9.- lista anual de compañías que en promedio han pagado más a sus empleados durante los últimos 10 años
 SELECT DISTINCT ON (anio)
