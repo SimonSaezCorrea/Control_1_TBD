@@ -76,6 +76,20 @@ FROM R
 WHERE rn = 1;
 
 --7.- Lista de compañías indicando cual es el avión que más ha recaudado en los últimos 4 años y cual es el monto recaudado
+WITH R AS (
+SELECT cm.id_compania,cm.nombre,a.id_avion,SUM(c.cantidad),
+	ROW_NUMBER() OVER(PARTITION BY cm.id_compania ORDER BY SUM(c.cantidad) DESC) AS rn
+FROM pasaje p
+INNER JOIN costo c ON p.id_costo = c.id_costo
+INNER JOIN vuelo v ON p.id_vuelo = v.id_vuelo
+INNER JOIN compania cm ON v.id_compania = cm.id_compania
+INNER JOIN avion a ON cm.id_compania = a.id_compania
+WHERE p.fecha >= CURRENT_DATE - INTERVAL '4 years'
+GROUP BY cm.id_compania,cm.nombre,a.id_avion
+	)
+SELECT id_compania,nombre,id_avion,sum AS recaudacion
+FROM R
+WHERE rn = 1
 
 --8.- Lista de compañías y total de aviones por año, en los últimos 10 años
 SELECT c.nombre AS compania, EXTRACT(YEAR FROM a.fecha) AS anio, COUNT(*) AS total_aviones
