@@ -1,5 +1,5 @@
 -- 1.- Lista de lugares al que más viajan los chilenos por año, durante los últimos 4 años
-SELECT DISTINCT Pe.lugar
+SELECT Pe.lugar, Pe.fecha, Ce.nombre, Ce.nacionalidad
 FROM Pasaje AS Pe, Vuelo AS Vo, Cliente_Vuelo AS Ce_Vo, Cliente AS Ce
 WHERE 
 	Pe.id_vuelo = Vo.id_vuelo AND
@@ -9,7 +9,7 @@ WHERE
 	Ce.nacionalidad = 'Chile';
 
 -- 2.- Lista con las secciones de vuelo más comprada por Argentinos
-SELECT Sn.nombre, COUNT(*)
+SELECT Sn.nombre, COUNT(*), Ce.nacionalidad
 FROM Pasaje AS Pe, Vuelo AS Vo, Cliente_Vuelo AS Ce_Vo, Cliente AS Ce, Seccion Sn
 WHERE
 	Pe.id_vuelo = Vo.id_vuelo AND
@@ -17,7 +17,7 @@ WHERE
 	Ce_Vo.id_cliente = Ce.id_cliente AND
 	Sn.id_seccion = Pe.id_seccion AND
 	Ce.nacionalidad = 'Argentina'
-GROUP BY Sn.id_seccion;
+GROUP BY Sn.id_seccion, Ce.nacionalidad;
 
 -- 3.- Lista mensual de países que más gastan en volar (durante los últimos 4 años)
 WITH pasajes_agrupados AS (
