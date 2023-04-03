@@ -55,6 +55,14 @@ GROUP BY id_cliente, año, mes
 HAVING COUNT(pas.id_seccion) > 4;
 
 --5.- Avión con menos vuelos
+SELECT a.id_avion, COUNT(a.id_avion) AS vuelos
+FROM Vuelo v
+INNER JOIN Compania c ON c.id_compania = v.id_compania
+INNER JOIN Avion a ON c.id_compania = a.id_compania
+GROUP BY a.id_avion
+ORDER BY vuelos ASC LIMIT 1;
+
+--6.- Lista de mensual de pilotos con mayor sueldo durante los últimos 4 años
 WITH R AS (
 SELECT s.fecha_inscrito,e.id_empleado,s.cantidad,
 	ROW_NUMBER() OVER(PARTITION BY s.fecha_inscrito ORDER BY s.cantidad DESC) AS rn
@@ -66,14 +74,6 @@ WHERE e.rol='Piloto' AND s.fecha_inscrito >= (CURRENT_DATE - interval '3 years')
 SELECT fecha_inscrito, id_empleado,cantidad AS Sueldo_Mayor
 FROM R
 WHERE rn = 1;
-
---6.- Lista de mensual de pilotos con mayor sueldo durante los últimos 4 años
-SELECT a.id_avion, COUNT(a.id_avion) AS vuelos
-FROM Vuelo v
-INNER JOIN Compania c ON c.id_compania = v.id_compania
-INNER JOIN Avion a ON c.id_compania = a.id_compania
-GROUP BY a.id_avion
-ORDER BY vuelos ASC LIMIT 1;
 
 --7.- Lista de compañías indicando cual es el avión que más ha recaudado en los últimos 4 años y cual es el monto recaudado
 
