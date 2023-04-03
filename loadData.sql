@@ -293,3 +293,13 @@ insert into Pasaje (id_pasaje, fecha, lugar, id_seccion, id_costo, id_vuelo) val
 insert into Pasaje (id_pasaje, fecha, lugar, id_seccion, id_costo, id_vuelo) values (18, '2015-01-28', 'China', 3, 3, 1);
 insert into Pasaje (id_pasaje, fecha, lugar, id_seccion, id_costo, id_vuelo) values (19, '2013-12-18', 'Indonesia', 4, 10, 10);
 insert into Pasaje (id_pasaje, fecha, lugar, id_seccion, id_costo, id_vuelo) values (20, '2015-03-11', 'Brazil', 1, 6, 4);
+insert into Pasaje (id_pasaje, fecha, lugar, id_seccion, id_costo, id_vuelo) values (21, '2020-09-29', 'Brazil', 4, 15, 13);
+insert into Pasaje (id_pasaje, fecha, lugar, id_seccion, id_costo, id_vuelo) values (22, '2020-09-08', 'Brazil', 4, 7, 13);
+insert into Pasaje (id_pasaje, fecha, lugar, id_seccion, id_costo, id_vuelo) values (23, '2020-09-08', 'Brazil', 4, 6, 13);
+insert into Pasaje (id_pasaje, fecha, lugar, id_seccion, id_costo, id_vuelo) values (24, '2020-09-29', 'Brazil', 4, 11, 13);
+insert into Pasaje (id_pasaje, fecha, lugar, id_seccion, id_costo, id_vuelo) values (25, '2020-09-14', 'Brazil', 4, 14, 13);
+insert into Pasaje (id_pasaje, fecha, lugar, id_seccion, id_costo, id_vuelo) values (26, '2021-05-03', 'China', 4, 10, 12);
+insert into Pasaje (id_pasaje, fecha, lugar, id_seccion, id_costo, id_vuelo) values (27, '2021-05-04', 'China', 4, 9, 12);
+insert into Pasaje (id_pasaje, fecha, lugar, id_seccion, id_costo, id_vuelo) values (28, '2021-05-28', 'China', 4, 3, 12);
+insert into Pasaje (id_pasaje, fecha, lugar, id_seccion, id_costo, id_vuelo) values (29, '2021-05-18', 'China', 4, 10, 12);
+insert into Pasaje (id_pasaje, fecha, lugar, id_seccion, id_costo, id_vuelo) values (30, '2021-05-11', 'China', 4, 6, 12);

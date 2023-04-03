@@ -1,5 +1,5 @@
 -- 1.- Lista de lugares al que más viajan los chilenos por año, durante los últimos 4 años
-SELECT Pe.lugar
+SELECT DISTINCT Pe.lugar
 FROM Pasaje AS Pe, Vuelo AS Vo, Cliente_Vuelo AS Ce_Vo, Cliente AS Ce
 WHERE 
 	Pe.id_vuelo = Vo.id_vuelo AND
