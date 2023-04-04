@@ -1,13 +1,5 @@
 -- Correr este bloque de sentencia primero antes de la creación de tablas.
-CREATE DATABASE "Aerolinea"
-    WITH
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    CONNECTION LIMIT = -1
-    IS_TEMPLATE = False;
-
--- Entrar a la base de datos recien creada
-\c Aerolinea;
+CREATE DATABASE "Aerolinea";
 
 -- Tener cuidado de asegurar de activar el QUERY TOOL para la
 -- BD "Aerolinea".
