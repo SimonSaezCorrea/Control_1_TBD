@@ -7,7 +7,7 @@ CREATE DATABASE "Aerolinea"
     IS_TEMPLATE = False;
 
 -- Entrar a la base de datos recien creada
-\c nombre_de_tu_base_de_datos;
+\c Aerolinea;
 
 -- Tener cuidado de asegurar de activar el QUERY TOOL para la
 -- BD "Aerolinea".
