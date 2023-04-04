@@ -6,6 +6,9 @@ CREATE DATABASE "Aerolinea"
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 
+-- Entrar a la base de datos recien creada
+\c nombre_de_tu_base_de_datos;
+
 -- Tener cuidado de asegurar de activar el QUERY TOOL para la
 -- BD "Aerolinea".
 create table Cliente(
