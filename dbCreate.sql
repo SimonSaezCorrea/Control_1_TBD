@@ -1,3 +1,13 @@
+-- Correr este bloque de sentencia primero antes de la creación de tablas.
+CREATE DATABASE "Aerolinea"
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+-- Tener cuidado de asegurar de activar el QUERY TOOL para la
+-- BD "Aerolinea".
 create table Cliente(
 	id_cliente int primary key,
 	nombre varchar(100) not null,
